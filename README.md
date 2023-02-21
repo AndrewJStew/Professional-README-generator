@@ -10,7 +10,9 @@
   - [Contact Info](#contact-info)
 
   ## Visual Presentation
-  ![Professional Readme Generator Example](assets/README-Generator-in-action.mp4)
+
+![ezgif com-optimize](https://user-images.githubusercontent.com/117686053/220458745-2e0364e7-09e2-4228-893e-c407d095759a.gif)
+
 
   ## Description:
   The above gif is a demonstration of how this 'deployed' application works. Created in effort to swiftly generate README files that use a consistant format. This took awhile for me to find all the missing pieces to get something working, it's weird yet awesome how something so seemingly simple took many hours of testing. Please enjoy the generator!
@@ -32,6 +34,6 @@
   - Answer the prompts that follow
   - On success a README.md will be generated.
 
-  ## Additional Info:
+  ## Contact Info:
   - Github: [AndrewJStew](https://github.com/AndrewJStew)
   - Email: andrewjstewart.work@gmail.com
