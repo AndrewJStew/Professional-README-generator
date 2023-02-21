@@ -22,7 +22,6 @@ const questions = [
         message: 'Write a description for your project',
         name: 'description',
     },
-    //Table of contents - research this 
 
     //Installation
     {
