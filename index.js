@@ -1,15 +1,18 @@
+//Global variables to be used throughout
 const fs = require("fs");
-const path = require('path');
+//Comes with starter code - haven't used
+// const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-const { type } = require("os");
+//comes with starter code - haven't used
+// const { type } = require("os");
 
 const questions = [
     //Title of my project - this should be input
     {
         type: 'input',
         message: 'What is the title of this project?',
-        name: 'titleSelect',
+        name: 'title',
     },
     //Sections
 
@@ -17,7 +20,7 @@ const questions = [
     {
         type: 'input',
         message: 'Write a description for your project',
-        name: 'descSelect',
+        name: 'description',
     },
     //Table of contents - research this 
 
@@ -25,61 +28,61 @@ const questions = [
     {
         type: 'input',
         message: 'How do you install this package?',
-        name: 'instSelect',
+        name: 'installation',
     },
     //Usage
     {
         type: 'input',
         message: 'How do you use this package?',
-        name: 'useSelect',
+        name: 'usage',
     },
-    //license - checkbox
+    //license - list
     {
         type: 'list',
         message: 'What liscense does this use?',
-        name: 'liscSelect',
+        name: 'liscense',
         choices: ['Mozilla Public License 2.0',
             'Apache License 2.0', 'MIT License',
             'The Unlicense', 'No License'],
     },
 
-    //Contributing
+    //Contributing - confirm
     {
         type: 'confirm',
         message: 'Do you want to allow additional contributers?',
-        name: 'contrSelect',
+        name: 'contributing',
     },
     {
         type: 'input',
         Message: 'explain how other developers can contribute to your project.',
-        name: 'confirmCont',
-        when: ({ contrSelect }) => {
-            if (contrSelect) {
+        name: 'confirmContribution',
+        when: ({ contributing }) => {
+            if (contributing) {
                 return true;
             } else {
                 return false;
             }
         }
     },
-    //Tests
+    //Tests - confirm
     {
         type: 'confirm',
         message: 'Can you test this app?',
-        name: 'testConfirm',
+        name: 'testing',
     },
     {
         type: 'input',
         message: 'Explain how users can test your app',
         name: 'testing',
-        when: ({ testConfirm }) => {
-            if (testConfirm) {
+        when: ({ testing }) => {
+            if (testing) {
                 return true;
             } else {
                 return false
             }
         }
     },
-    //Questions
+    //Questions - input
     {
         type: 'input',
         message: 'Input some instructions to help people contact you for questions',
@@ -91,6 +94,7 @@ const questions = [
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err)
+        //throw statement trhows a user-defined excpetion.
             throw err;
         console.log('Well done! Your info has been transferred to the README!')
     });
