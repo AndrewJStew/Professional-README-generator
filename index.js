@@ -89,17 +89,21 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, error => {
-        if (error) {
-            return console.log('I\'m afraid there is an error. Try again.')
-        }
-    })
-}
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+            throw err;
+        console.log('Well done! Your info has been transferred to the README!')
+    });
+};
 
 // function to initialize program
 function init() {
-
-}
+    inquirer.prompt(questions)
+        .then(function (userInput) {
+            console.log(userInput)
+            writeToFile("README.md", generateMarkdown(userInput))
+        });
+};
 
 // function call to initialize program
 init();
