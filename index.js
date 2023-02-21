@@ -39,8 +39,8 @@ const questions = [
     //license - list
     {
         type: 'list',
-        message: 'What liscense does this use?',
-        name: 'liscense',
+        message: 'What license does this use?',
+        name: 'license',
         choices: ['Mozilla Public License 2.0',
             'Apache License 2.0', 'MIT License',
             'The Unlicense', 'No License'],
@@ -87,14 +87,28 @@ const questions = [
         type: 'input',
         message: 'Input some instructions to help people contact you for questions',
         name: 'questions',
-    }
+    },
+    //Github username - to be inserted in questions
+    {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'github',
+    },
+
+    //Email - to be inserted in questions
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
+
+    },
 ]; //end of question array
 
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err)
-        //throw statement trhows a user-defined excpetion.
+            //throw statement trhows a user-defined excpetion.
             throw err;
         console.log('Well done! Your info has been transferred to the README!')
     });
