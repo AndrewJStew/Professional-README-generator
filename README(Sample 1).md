@@ -1,6 +1,4 @@
-// function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+# Professional README
   
 
    ## Table of contents
@@ -12,25 +10,23 @@ function generateMarkdown(data) {
    - [Questions] (#questions)
 
    ## Description:
-   ${data.description}
+   This project generates a professional README file
 
    ## Installation:
-   ${data.installation}
+   Run Node index.js
 
    ## Usage:
-   ${data.usage}
+   Look above
 
    ## License:
-   ${data.liscense}
+   MIT License
 
    ## Contribution:
-   ${data.contribution}
+   undefined
 
    ## Testing
-   ${data.testing}
+   false
 
    ## Questions
-   ${data.testing} `;
-}
-
-module.exports = generateMarkdown;
+   false
+  
